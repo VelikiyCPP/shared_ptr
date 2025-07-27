@@ -31,7 +31,9 @@ namespace my {
                 std::cout << "~control_block()" << std::endl;
             }
 
-            void destroy_object() noexcept override {}
+            void destroy_object() noexcept override {
+                object_.~T();
+            }
         };
 
         T* p_object_ = nullptr;
